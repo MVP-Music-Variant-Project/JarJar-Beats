@@ -29,7 +29,7 @@ class Search extends React.Component {
     handleSearchSubmit = async (event) => {
         event.preventDefault();
         try {
-            let artistUrl = `http://localhost:3001/searchSongs?name=${this.state.artist}`;
+            let artistUrl = `${process.env.REACT_APP_SERVER}/searchSongs?name=${this.state.artist}`;
             let artist = await axios.get(artistUrl);
             this.setState({
                 artistData: artist.data[0],
