@@ -19,7 +19,7 @@ class SongCard extends React.Component {
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Img src={this.props.image} style={{ width: '40%' }}></Card.Img>
-            <Card.Text onClick={() => this.props.addFavorite(this.props.artist)}>:heart:</Card.Text>
+            <Card.Text onClick={() => this.props.addFavorite(this.props.artist)}>&#9825;</Card.Text>
             <Card.Text>Artist: {this.props.name}</Card.Text>
             <Card.Text>Album: {this.props.album}</Card.Text>
           </Card.Body>

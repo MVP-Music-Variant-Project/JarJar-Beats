@@ -43,7 +43,6 @@ class Search extends React.Component {
           baseURL: process.env.REACT_APP_SERVER,
           url: `/playlist?email=${this.props.user.email}`,
           headers: { "Authorization": `Bearer ${jwt}` }
-
         }
         const results = await axios(config);
         console.log(results.data);
@@ -119,10 +118,24 @@ class Search extends React.Component {
     });
   };
 
-  addFavorite = (songCard) => {
+  addFavorite = async (songCard) => {
     const { favorites } = this.state;
-    favorites.push(songCard);
+    const newFavorites = [...favorites, songCard];
     this.setState({ favorites });
+    const res = await this.props.auth0.getIdTokenClaims();
+    const jwt = res.__raw;
+    const config = {
+      method: 'put',
+      baseURL: process.env.REACT_APP_SERVER,
+      url: `/playlist?email=${this.props.auth0.user.email}`,
+      headers: { "Authorization": `Bearer ${jwt}` },
+      data: {
+        email: this.props.auth0.user.email,
+        songs: newFavorites,
+      }
+    }
+    const result = await axios(config);
+    console.log('result', result);
   };
 
   // postPlaylist = ()
@@ -163,7 +176,6 @@ class Search extends React.Component {
             image={artist.image}
             name={this.state.artist}
             addFavorite={this.addFavorite}
-
           />
         )
         // ) else (
