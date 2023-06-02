@@ -1,0 +1,17 @@
+.AboutContainer {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.profileImg {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin: 10px;
+  transition: 250ms ease;
+}
+
+.profileImg:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}

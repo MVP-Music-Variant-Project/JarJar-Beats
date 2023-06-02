@@ -4,8 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 class Footer extends React.Component {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand>Code Fellows</Navbar.Brand>
+      <Navbar className='footer' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand>&copy; Dan Quinn, Tiffani Rice, Anthony Sinistsa, Andrew Carroll, Ashley Taylor, Jared Ciccarello</Navbar.Brand>
       </Navbar>
     )
   }

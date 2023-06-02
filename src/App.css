@@ -1,0 +1,30 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #F8F8F8;
+  padding: 20px;
+  text-align: center;
+}
+div.modal-header{
+  color: black;
+}
+div.modal-body{
+  color: black;
+}
+body {
+  color: white;
+}
+
+main {
+  background-image: url('../public/images/GalaxyMtn.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  min-height: 1000px;
+  padding-bottom: 5rem;
+}
+
+

@@ -1,13 +1,12 @@
 import React from 'react';
 
 class Artist extends React.Component {
-    render() {
-        return (
+  render() {
+    return (
 
-            <p> Artist </p>
-        )
-    }
+      <p> Artist </p>
+    )
+  }
 }
 
 export default Artist;
-

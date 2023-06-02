@@ -7,28 +7,28 @@ import {
   Route
 } from "react-router-dom";
 import Header from './Header'
-import AboutUs from './AboutUs';
+import AboutUs from './AboutUs/index';
 import Search from './Search';
 import Playlist from './Playlist';
 import Artist from './Artist';
 import Footer from './Footer';
 import { withAuth0 } from '@auth0/auth0-react';
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
-import Profile from './Profile';
+// import LoginButton from './LoginButton';
+// import LogoutButton from './LogoutButton';
+// import Profile from './Profile';
 
 class App extends React.Component {
   render() {
     return (
       <>
-        {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
-        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please login</h2>}
+        {/* {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please login</h2>} */}
         <Router>
           <Header />
           <Routes>
             <Route
               exact path="/"
-              element={<Search />}
+              element={this.props.auth0.isAuthenticated ? <Search /> : <p>Mesa Moi Moi happy to see yous!</p>}
             > </Route>
             <Route
               path="/artist"
